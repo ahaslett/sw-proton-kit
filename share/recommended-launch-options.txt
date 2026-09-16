@@ -1,0 +1,24 @@
+Summoners War (Steam 2426960) — recommended Steam launch options
+================================================================
+
+Preferred (this package's wrapper):
+  "$HOME/.local/bin/sw-compat-wrapper" %command%
+
+ProtonDB consensus without the wrapper:
+  %command%
+
+Compatibility tool:
+  Proton 9.0-4
+  Do not use GE-Proton or Proton Experimental for the login window
+  (ProtonDB: those builds hide the Hive/Google login UI).
+
+Also in Steam Properties:
+  Disable "Enable the Steam Overlay while in-game"
+
+Optional profiles (wrapper):
+  SW_PROTON_PROFILE=diag "$HOME/.local/bin/sw-compat-wrapper" %command%
+  SW_PROTON_PROFILE=freeze-mitigation "$HOME/.local/bin/sw-compat-wrapper" %command%
+
+Never:
+  WINEDLLOVERRIDES that name GameMon, GameGuard, or npgg*
+  Launch options that replace GameGuard binaries

@@ -1,0 +1,13 @@
+[Unit]
+Description=Summoners War Proton zombie watchdog (AppID 2426960)
+Documentation=file://@BIN@/../share/sw-proton-compat/docs/research-brief.md
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=@BIN@/sw-watchdog --relaunch --interval 15
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=default.target
